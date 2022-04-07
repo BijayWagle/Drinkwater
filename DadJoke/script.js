@@ -9,6 +9,7 @@ generateJoke()
 async function generateJoke(){
   const config={
     headers:{
+      //accept as key and application/json as value
       'Accept':'application/json'
     }
   }
@@ -27,6 +28,8 @@ async function generateJoke(){
     }
   }
   fetch('https://icanhazdadjoke.com',config)
+
+  //it store the return element from .then response from arrow function(=>) response.json and then store in data 
   .then((res)=>res.json())
   .then((data)=>{
     jokeEl.innerHTML=data.joke
